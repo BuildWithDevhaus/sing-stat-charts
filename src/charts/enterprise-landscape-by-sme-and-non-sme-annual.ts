@@ -1,16 +1,17 @@
 import type { ChartItem } from 'chart.js';
 import Chart from 'chart.js/auto'
 
+
+//
+
+
 (async function() {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+  const url = `https://tablebuilder.singstat.gov.sg/api/table/tabledata/M600981`
+  const data = await fetch(
+    url
+  ).then(response => response.json());
+
+  console.log(data);
 
   new Chart(
     document.getElementById('chart') as ChartItem,
@@ -21,7 +22,7 @@ import Chart from 'chart.js/auto'
         datasets: [
           {
             label: 'Acquisitions by year',
-            data: data.map(row => row.count)
+            data: data.map(row => row.count),
           }
         ]
       }
