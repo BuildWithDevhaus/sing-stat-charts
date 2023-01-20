@@ -1,9 +1,7 @@
 import type { ChartItem } from 'chart.js';
 import Chart from 'chart.js/auto'
 
-
-//
-
+//hello!
 
 (async function() {
   const url = `https://tablebuilder.singstat.gov.sg/api/table/tabledata/M600981`
